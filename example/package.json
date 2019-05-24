@@ -10,7 +10,7 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-paper": "2.2.8",
-    "react-native-super-lottery": "0.0.1"
+    "react-native-super-lottery": "0.0.2"
   },
   "scripts": {
       "start": "expo start"

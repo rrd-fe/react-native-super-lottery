@@ -4254,9 +4254,9 @@ react-native-screens@1.0.0-alpha.22:
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
 
-react-native-super-lottery@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-super-lottery/-/react-native-super-lottery-0.0.1.tgz#dd2e953b72b6cbeae84281e3696a59d270e8818b"
+react-native-super-lottery@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-super-lottery/-/react-native-super-lottery-0.0.2.tgz#e9551cba8e7fcaf6f71a0668d99f88fed7e70c2c"
 
 react-native-svg@8.0.10:
   version "8.0.10"

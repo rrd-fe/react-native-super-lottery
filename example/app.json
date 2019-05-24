@@ -23,6 +23,10 @@
     },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }
