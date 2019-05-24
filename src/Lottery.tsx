@@ -70,7 +70,7 @@ class Lottery extends Component<Props<object>, State> {
    * 2. 之后 10 次 每次速递递减 20ms
    * 3. 中奖前一次速度减 80ms
    */
-  startLottery = () => {
+  private startLottery = () => {
     this.setState({
       highLightIndex: this.getHighLightItemIndex(this.currentIndex)
     }, () => {
@@ -116,7 +116,7 @@ class Lottery extends Component<Props<object>, State> {
     this.stopCallback = stopCallback;
   }
 
-  reset = () => {
+  private reset = () => {
     this.isLottering = false;
     this.currentIndex = 0;
     this.speed = 100;

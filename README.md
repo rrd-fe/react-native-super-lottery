@@ -11,7 +11,18 @@ $ npm i react-native-super-lottery --save
 转盘只支持九宫格。
 
 ```jsx
-$ npm i react-native-super-lottery --save
+// 引入相关的类库
+import { Lottery, LotteryItem } from 'react-native-super-lottery';
+// 调用Lottery组件
+<Lottery
+    ref={this.lotteryRef}
+    data={lotteryData}
+    renderItem={this.renderItem}
+    defaultLucky={5}
+/>
+// 开始转盘抽奖
+this.lotteryRef.current.start();
+this.lotteryRef.current.stop(5, () => {});
 ```
 
 ## Properties
@@ -32,7 +43,18 @@ $ npm i react-native-super-lottery --save
 | index | 无 | `number` | 当前奖品的Index |
 | highLightIndex | 无 | `number` | 当前应该高亮的奖品index |
 
-### LotteryItem 组件
+## Method
+
+### start() : 转动转盘开始抽奖
+
+### stop(index, stopCallback) ： 完成抽奖，停止转盘转动
+
+| Prop  | Default  | Type | Description |
+| :------------ | :---------------:| :---------------:| :-----|
+| index | 无 | `number` | 中奖奖品在奖品数据中的index |
+| stopCallback | (index) => void | `number` | 转盘停止之后的回调函数 |
+
+## LotteryItem 组件
 
 为了更方便的实现 renderItem 函数， 组件框提供了一个简版的LotteryItem，具体参数如下：
 
