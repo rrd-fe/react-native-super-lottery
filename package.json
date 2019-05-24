@@ -1,0 +1,17 @@
+{
+    "name": "react-native-super-lottery",
+    "version": "0.0.1",
+    "description": "React Native 版本9宫格转盘抽奖组件",
+    "main": "index.tsx",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rrd-fe/react-native-super-lottery.git"
+    },
+    "keywords": [
+        "react-native",
+        "lottery",
+        "point-wheel"
+    ],
+    "author": "RRD-FE",
+    "license": "BSD 3-Clause License"
+}
