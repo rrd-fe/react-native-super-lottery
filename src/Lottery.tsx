@@ -76,21 +76,21 @@ class Lottery extends Component<Props<object>, State> {
     }, () => {
         const currentOrder = this.currentIndex % 8;
         this.currentIndex += 1;
-        if (this.currentIndex > CYCLE_TIMES + 10 && this.luckyOrder === currentOrder) {
+        if (this.currentIndex > CYCLE_TIMES + 8 && this.luckyOrder === currentOrder) {
         clearTimeout(this.lotteryTimer);
         setTimeout(() => {
             this.stopCallback(LOTTERY_ORDER[this.luckyOrder]);
             setTimeout(() => {
-            this.reset();
-            this.setState({
-                highLightIndex: -1
-            });
-            });
+                this.reset();
+                this.setState({
+                    highLightIndex: -1
+                });
+            }, 1000);
         }, 500)
         } else {
         if (this.currentIndex < CYCLE_TIMES) {
             this.speed -= 10;
-        } else if (this.currentIndex > CYCLE_TIMES + 10 && this.luckyOrder === currentOrder + 1) {
+        } else if (this.currentIndex > CYCLE_TIMES + 8 && this.luckyOrder === currentOrder + 1) {
             this.speed += 80;
         } else {
             this.speed += 20;

@@ -1,5 +1,9 @@
 # react-native-super-lottery
 
+## Show Case
+
+
+
 ## Install
 
 ```bash
@@ -66,3 +70,16 @@ this.lotteryRef.current.stop(5, () => {});
 | height | 无 | `number` | 奖品图片的高度 |
 | type | 'normal' | 'highLight' | 'lotteryBtn' | `string` | 转盘Item的类型， highLight 当前转盘旋转到的Item、lotteryBtn 转盘开始抽奖按钮、 normal 正常按钮 |
 | lotteryPress | 无 | `function` | 抽奖按钮点击回调 |
+
+## Example
+
+本工程的 Demo 基于expo开发，请安装expo查看效果
+
+```bash
+$ cd example
+$ npm install -g expo-cli #安装 expo cli 命令行工具
+$ yarn add
+$ npm start
+```
+
+如果没有安装expo也可以通过[在线Demo](https://snack.expo.io/@wangcheng714/react-native-lottery)查看效果
