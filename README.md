@@ -2,7 +2,7 @@
 
 ## Show Case
 
-[react-native-lottery-demo](https://i.imgur.com/xurl9UM.gif)
+![](https://i.imgur.com/xurl9UM.gif)
 
 ## Install
 
