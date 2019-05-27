@@ -6,13 +6,17 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
+    "@tweenjs/tween.js": "^17.3.2",
+    "@types/react-navigation": "^3.0.7",
+    "@types/tween.js": "^17.2.0",
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-paper": "2.2.8",
-    "react-native-super-lottery": "0.0.2"
+    "react-native-super-lottery": "0.0.2",
+    "react-navigation": "^3.11.0"
   },
   "scripts": {
-      "start": "expo start"
+    "start": "expo start"
   }
 }

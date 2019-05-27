@@ -83,3 +83,7 @@ $ npm start
 ```
 
 如果没有安装expo也可以通过[在线Demo](https://snack.expo.io/@wangcheng714/react-native-lottery)查看效果
+
+## DOC
+
+
