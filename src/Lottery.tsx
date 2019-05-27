@@ -37,6 +37,8 @@ class Lottery extends Component<Props<object>, State> {
   private luckyOrder = -1;
   // 转盘的旋转速度，实际是转盘旋转间隔时间setTimeout的值
   private speed = 200;
+  // 匀速运动的次数
+  private uniformTimes = 0;
   
   private lotteryTimer: number|undefined;
 
@@ -67,7 +69,7 @@ class Lottery extends Component<Props<object>, State> {
   /**
    * 转盘抽奖动画：
    * 1. 前 CYCLE_TIMES = 30 次， 每次速度递加 10ms，
-   * 2. 之后 10 次 每次速递递减 20ms
+   * 2. 之后 8 次 每次速递递减 20ms
    * 3. 中奖前一次速度减 80ms
    */
   private startLottery = () => {
@@ -76,7 +78,7 @@ class Lottery extends Component<Props<object>, State> {
     }, () => {
         const currentOrder = this.currentIndex % 8;
         this.currentIndex += 1;
-        if (this.currentIndex > CYCLE_TIMES + 8 && this.luckyOrder === currentOrder) {
+        if (this.currentIndex > CYCLE_TIMES + 8 + this.uniformTimes && this.luckyOrder === currentOrder) {
         clearTimeout(this.lotteryTimer);
         setTimeout(() => {
             this.stopCallback(LOTTERY_ORDER[this.luckyOrder]);
@@ -88,18 +90,21 @@ class Lottery extends Component<Props<object>, State> {
             }, 1000);
         }, 500)
         } else {
-        if (this.currentIndex < CYCLE_TIMES) {
-            this.speed -= 10;
-        } else if (this.currentIndex > CYCLE_TIMES + 8 && this.luckyOrder === currentOrder + 1) {
-            this.speed += 80;
-        } else {
-            this.speed += 20;
-        }
-        // 确保速度不能低于 50 ms
-        if (this.speed < 50) {
-            this.speed = 50;
-        }
-        this.lotteryTimer = setTimeout(this.startLottery, this.speed);
+            if (this.currentIndex < CYCLE_TIMES) {
+                this.speed -= 10;
+            } else if (this.currentIndex > CYCLE_TIMES + 8 + this.uniformTimes && this.luckyOrder === currentOrder + 1) {
+                this.speed += 80;
+            } else if (this.luckyOrder === -1) {
+                // 次数超过30次，且尚未拿到抽奖结果时：匀速运动
+                this.uniformTimes += 1;
+            } else {
+                this.speed += 20;
+            }
+            // 确保速度不能低于 50 ms
+            if (this.speed < 50) {
+                this.speed = 50;
+            }
+            this.lotteryTimer = setTimeout(this.startLottery, this.speed);
         }
     });
   }

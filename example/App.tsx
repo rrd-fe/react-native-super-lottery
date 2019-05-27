@@ -53,7 +53,7 @@ export default class App extends React.Component<{}, State> {
       // 模拟请求后端中奖信息 5s中后返回中奖结果
       setTimeout(() => {
           this.stopLottery(6);
-      }, 5000);
+      }, 10000);
     } else {
       Alert.alert("正在抽奖中，请稍后再试");
     }
